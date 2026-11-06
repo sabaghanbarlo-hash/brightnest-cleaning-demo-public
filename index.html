@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BrightNest Cleaning | Demo Residential Cleaning Website</title>
+  <meta name="description" content="BrightNest Cleaning is a fictional residential cleaning company created for a website demonstration.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="demo-banner" role="note">
+    Demo website: BrightNest Cleaning is a fictional company. Nothing here is a real business or offer.
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="BrightNest Cleaning, back to top">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" focusable="false">
+            <path d="M4 15 16 5l12 10v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V15Z" fill="currentColor"/>
+            <path d="m16 12 1.6 3.4L21 17l-3.4 1.6L16 22l-1.6-3.4L11 17l3.4-1.6L16 12Z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">BrightNest</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#service-area">Service area</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="btn btn-small" href="#quote">Request a quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Residential cleaning (demo)</p>
+          <h1 id="hero-title">A fresher, calmer home, without the cleaning marathon.</h1>
+          <p class="lead">
+            BrightNest Cleaning is a fictional home-cleaning company. This demo shows how a
+            clear, friendly website can explain services and make it easy to ask for a quote.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#quote">Request a quote</a>
+            <a class="btn btn-outline" href="#services">See services</a>
+          </div>
+          <ul class="hero-points" aria-label="Highlights of this demo">
+            <li>Simple quote request</li>
+            <li>Clear service options</li>
+            <li>Plain-language process</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 340" role="presentation" focusable="false">
+            <circle cx="200" cy="170" r="150" fill="var(--mint)"/>
+            <rect x="110" y="140" width="180" height="130" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="4"/>
+            <path d="M95 148 200 62l105 86" fill="none" stroke="var(--navy)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="178" y="195" width="44" height="75" rx="6" fill="var(--teal)"/>
+            <circle cx="213" cy="235" r="3" fill="#fff"/>
+            <rect x="128" y="168" width="34" height="34" rx="4" fill="var(--mint)" stroke="var(--navy)" stroke-width="3"/>
+            <rect x="238" y="168" width="34" height="34" rx="4" fill="var(--mint)" stroke="var(--navy)" stroke-width="3"/>
+            <path d="m320 80 6 14 14 6-14 6-6 14-6-14-14-6 14-6 6-14Z" fill="var(--sun)"/>
+            <path d="m75 120 4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10Z" fill="var(--sun)"/>
+            <path d="m340 220 3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" fill="var(--teal)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">Cleaning services</h2>
+          <p>Three example service types. Details would be confirmed with a real provider during a quote.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🧽</div>
+            <h3>Standard Cleaning</h3>
+            <p>Regular upkeep for the rooms you use every day.</p>
+            <ul class="check-list">
+              <li>Dusting and surface wipe-down</li>
+              <li>Kitchen and bathroom cleaning</li>
+              <li>Vacuuming and mopping floors</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">✨</div>
+            <h3>Deep Cleaning</h3>
+            <p>A more detailed clean for homes that need extra attention.</p>
+            <ul class="check-list">
+              <li>Everything in Standard Cleaning</li>
+              <li>Baseboards and door frames</li>
+              <li>Extra focus on kitchens and bathrooms</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📦</div>
+            <h3>Move-In / Move-Out</h3>
+            <p>Help getting an empty home ready for new beginnings.</p>
+            <ul class="check-list">
+              <li>Empty-home cleaning</li>
+              <li>Inside cabinets and drawers</li>
+              <li>Floors and surfaces throughout</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-alt" id="how-it-works" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="process-title">How booking works</h2>
+          <p>A simple four-step flow, shown here as an example.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Request a quote</h3>
+            <p>Tell us what kind of cleaning you need using the short form below.</p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Review the details</h3>
+            <p>A team member would confirm your home details and answer questions.</p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Pick a time</h3>
+            <p>Choose a date and arrival window that fits your schedule.</p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">4</span>
+            <h3>Enjoy your space</h3>
+            <p>Come home to a tidier house and share feedback for next time.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Service area -->
+    <section class="section" id="service-area" aria-labelledby="area-title">
+      <div class="container area-grid">
+        <div>
+          <h2 id="area-title">Service area</h2>
+          <p>
+            In this fictional example, BrightNest serves the made-up communities below.
+            None of these places represent a real service territory.
+          </p>
+          <ul class="pill-list" aria-label="Fictional service areas">
+            <li>Maple Ridge</li>
+            <li>Cedar Hollow</li>
+            <li>Lakeview Heights</li>
+            <li>Willow Creek</li>
+            <li>Stonebridge</li>
+            <li>Harbor Point</li>
+          </ul>
+          <p class="note">Not sure if you are in the area? In a real business, the quote form would be the place to ask.</p>
+        </div>
+
+        <aside class="info-box" aria-labelledby="hours-title">
+          <h3 id="hours-title">Example business hours</h3>
+          <dl class="hours">
+            <div><dt>Monday to Friday</dt><dd>8:00 a.m. to 6:00 p.m.</dd></div>
+            <div><dt>Saturday</dt><dd>9:00 a.m. to 3:00 p.m.</dd></div>
+            <div><dt>Sunday</dt><dd>Closed</dd></div>
+          </dl>
+          <p class="note">Fictional hours for demonstration only.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <p>Sample answers for a demo company. A real business would adjust these to match its policies.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>What should I do to prepare for a cleaning?</summary>
+            <p>Picking up personal items from floors and counters helps the cleaners reach more surfaces. Let the team know about anything delicate or off-limits.</p>
+          </details>
+          <details>
+            <summary>Do I need to be home during the cleaning?</summary>
+            <p>That is usually up to you. Some people stay, others arrange access in advance. A real company would explain its own access policy here.</p>
+          </details>
+          <details>
+            <summary>Do you bring your own supplies?</summary>
+            <p>In this example, yes, the team brings standard supplies. If you prefer specific products, mention it in your quote request.</p>
+          </details>
+          <details>
+            <summary>How do I get a price?</summary>
+            <p>Use the quote form on this page. Pricing in real life depends on home size, condition, and the type of service, so no prices are listed in this demo.</p>
+          </details>
+          <details>
+            <summary>Can I change or cancel a booking?</summary>
+            <p>A real company would state its rescheduling and cancellation terms here. This demo does not take real bookings.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote form -->
+    <section class="section" id="quote" aria-labelledby="quote-title">
+      <div class="container quote-grid">
+        <div class="quote-intro">
+          <h2 id="quote-title">Request a quote</h2>
+          <p>Fill out the form to see how a quote request would work. This is a demo, so nothing is sent or saved anywhere.</p>
+
+          <div class="info-box" aria-labelledby="contact-title">
+            <h3 id="contact-title">Contact details (fictional)</h3>
+            <ul class="contact-list">
+              <li><strong>Phone:</strong> (555) 010-0123</li>
+              <li><strong>Email:</strong> hello@brightnest.example</li>
+              <li><strong>Address:</strong> 123 Example Street, Anytown, USA</li>
+            </ul>
+            <p class="note">These details are made up and do not connect to a real business.</p>
+          </div>
+        </div>
+
+        <form id="quote-form" class="quote-form" novalidate aria-labelledby="quote-title">
+          <p class="required-note"><span aria-hidden="true">*</span> Required field</p>
+
+          <div class="field">
+            <label for="name">Full name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error" aria-required="true">
+            <p class="error" id="name-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error" aria-required="true">
+            <p class="error" id="email-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="service">Service type <span aria-hidden="true">*</span></label>
+            <select id="service" name="service" required aria-describedby="service-error" aria-required="true">
+              <option value="">Choose a service</option>
+              <option value="standard">Standard Cleaning</option>
+              <option value="deep">Deep Cleaning</option>
+              <option value="move">Move-In / Move-Out</option>
+              <option value="other">Not sure yet</option>
+            </select>
+            <p class="error" id="service-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" aria-describedby="message-help message-error" aria-required="true"></textarea>
+            <p class="help" id="message-help"><span id="char-count">0</span> / 500 characters</p>
+            <p class="error" id="message-error" aria-live="polite"></p>
+          </div>
+
+          <button class="btn btn-full" type="submit">Send demo request</button>
+
+          <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive inquiry assistant: fictional, local-only demo -->
+  <button class="assistant-launcher" id="assistant-launcher" type="button" aria-expanded="false" aria-controls="assistant-panel">
+    <span aria-hidden="true">✦</span> Ask BrightNest
+  </button>
+  <section class="assistant-panel" id="assistant-panel" aria-label="BrightNest inquiry assistant" hidden>
+    <div class="assistant-heading">
+      <div><strong>BrightNest assistant</strong><span>Cleaning inquiry demo</span></div>
+      <button class="assistant-close" id="assistant-close" type="button" aria-label="Close assistant">×</button>
+    </div>
+    <div class="assistant-messages" id="assistant-messages" aria-live="polite">
+      <p class="assistant-message">Hi! I can help you prepare a cleaning quote request. It takes about a minute. What kind of cleaning do you need?</p>
+    </div>
+    <form class="assistant-form" id="assistant-form">
+      <label for="assistant-service">Cleaning service</label>
+      <select id="assistant-service" name="service" required>
+        <option value="">Choose a service</option><option>Standard cleaning</option><option>Deep cleaning</option><option>Move-in / move-out</option><option>Not sure yet</option>
+      </select>
+      <label for="assistant-size">Home size</label>
+      <select id="assistant-size" name="homeSize" required>
+        <option value="">Choose home size</option><option>Studio / 1 bedroom</option><option>2 bedrooms</option><option>3–4 bedrooms</option><option>5+ bedrooms</option>
+      </select>
+      <label for="assistant-postcode">Postcode or area</label>
+      <input id="assistant-postcode" name="area" autocomplete="postal-code" required maxlength="100" placeholder="e.g. 10001">
+      <label for="assistant-date">Preferred date (optional)</label>
+      <input id="assistant-date" name="preferredDate" type="date">
+      <label for="assistant-name">Your name</label>
+      <input id="assistant-name" name="name" autocomplete="name" required maxlength="100">
+      <label for="assistant-email">Email address</label>
+      <input id="assistant-email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="you@example.com">
+      <button class="btn btn-full" type="submit">Prepare demo request</button>
+      <p class="assistant-disclaimer">Demo only: details stay in this browser on this device. Nothing is sent to BrightNest or any business.</p>
+      <p class="assistant-status" id="assistant-status" role="status"></p>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>BrightNest Cleaning</strong> is a fictional company created for a web design demonstration.</p>
+      <p>&copy; <span id="year">2026</span> Demo project. No real services are offered.</p>
+    </div>
+  </footer>
+</body>
+</html>
