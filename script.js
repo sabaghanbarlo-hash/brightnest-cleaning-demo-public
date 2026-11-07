@@ -253,8 +253,8 @@ function setupInquiryAssistant() {
     var reply = document.createElement("p");
     reply.className = "assistant-message";
     reply.textContent = sentToSheet
-      ? "Thanks, " + lead.name.split(/\\s+/)[0] + "! Your request has been sent to the BrightNest lead inbox. This demo cannot verify that the row appeared in the sheet, so the business owner should check the inbox."
-      : "Thanks, " + lead.name.split(/\\s+/)[0] + "! Your demo request was saved only in this browser. It was not sent to the business.";
+      ? "Thanks, " + lead.name.split(/\s+/)[0] + "! Your request has been sent to the BrightNest lead inbox. This demo cannot verify that the row appeared in the sheet, so the business owner should check the inbox."
+      : "Thanks, " + lead.name.split(/\s+/)[0] + "! Your demo request was saved only in this browser. It was not sent to the business.";
     messages.appendChild(reply);
     form.hidden = true;
     status.textContent = sentToSheet
