@@ -171,7 +171,11 @@ function setupQuoteForm() {
 }
 
 
-/* ---------- Cleaning inquiry assistant (local-only demo) ---------- */
+/* ---------- Cleaning inquiry assistant ---------- */
+// Add the deployed Google Apps Script Web App URL here after setup.
+// Leave blank to keep the safe local-only demo behavior.
+var BRIGHTNEST_LEAD_ENDPOINT = "";
+
 function setupInquiryAssistant() {
   var launcher = document.getElementById("assistant-launcher");
   var panel = document.getElementById("assistant-panel");
@@ -193,35 +197,68 @@ function setupInquiryAssistant() {
     if (event.key === "Escape" && !panel.hidden) setOpen(false);
   });
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", async function (event) {
     event.preventDefault();
     if (!form.reportValidity()) return;
+
     var data = Object.fromEntries(new FormData(form).entries());
     var lead = {
-      id: "demo-" + Date.now(),
       service: data.service,
       homeSize: data.homeSize,
-      area: data.area.trim(),
-      preferredDate: data.preferredDate,
-      name: data.name.trim(),
-      email: data.email.trim(),
+      area: String(data.area || "").trim(),
+      preferredDate: data.preferredDate || "",
+      name: String(data.name || "").trim(),
+      email: String(data.email || "").trim(),
       createdAt: new Date().toISOString(),
-      demoOnly: true
+      source: "BrightNest website assistant"
     };
+
+    var submitButton = form.querySelector('[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
+    status.textContent = "Submitting your request…";
+
+    // Without an endpoint, keep the original local-only demo behavior.
+    if (!BRIGHTNEST_LEAD_ENDPOINT) {
+      try {
+        var leads = JSON.parse(localStorage.getItem("brightnest_demo_leads") || "[]");
+        if (!Array.isArray(leads)) leads = [];
+        leads.push(Object.assign({ id: "demo-" + Date.now() }, lead));
+        localStorage.setItem("brightnest_demo_leads", JSON.stringify(leads));
+        showAssistantConfirmation(lead, false);
+      } catch (error) {
+        status.textContent = "Your browser could not save this demo request. No details were sent.";
+        if (submitButton) submitButton.disabled = false;
+      }
+      return;
+    }
+
     try {
-      var leads = JSON.parse(localStorage.getItem("brightnest_demo_leads") || "[]");
-      if (!Array.isArray(leads)) leads = [];
-      leads.push(lead);
-      localStorage.setItem("brightnest_demo_leads", JSON.stringify(leads));
-      messages.textContent = "";
-      var reply = document.createElement("p");
-      reply.className = "assistant-message";
-      reply.textContent = "Thanks, " + lead.name.split(/\s+/)[0] + "! Your demo request is prepared for " + lead.service.toLowerCase() + ". This prototype saved it only in this browser; it did not send an email or notify a cleaning company.";
-      messages.appendChild(reply);
-      form.hidden = true;
-      status.textContent = "Demo request saved locally on this device.";
+      // text/plain is a simple cross-origin request; Apps Script receives the JSON body.
+      // no-cors intentionally makes the response unreadable, so we cannot verify the sheet write.
+      await fetch(BRIGHTNEST_LEAD_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(lead)
+      });
+      showAssistantConfirmation(lead, true);
     } catch (error) {
-      status.textContent = "Your browser could not save this demo request. No details were sent.";
+      status.textContent = "We couldn't send your request. Please try again or contact the business directly.";
+      if (submitButton) submitButton.disabled = false;
     }
   });
+
+  function showAssistantConfirmation(lead, sentToSheet) {
+    messages.textContent = "";
+    var reply = document.createElement("p");
+    reply.className = "assistant-message";
+    reply.textContent = sentToSheet
+      ? "Thanks, " + lead.name.split(/\\s+/)[0] + "! Your request has been sent to the BrightNest lead inbox. This demo cannot verify that the row appeared in the sheet, so the business owner should check the inbox."
+      : "Thanks, " + lead.name.split(/\\s+/)[0] + "! Your demo request was saved only in this browser. It was not sent to the business.";
+    messages.appendChild(reply);
+    form.hidden = true;
+    status.textContent = sentToSheet
+      ? "Request submitted. Please allow the business time to follow up."
+      : "Demo request saved locally on this device only.";
+  }
 }
